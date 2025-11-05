@@ -1,0 +1,193 @@
+$pokedex-red: #d94545;
+$pokedex-dark-red: #a82c2c;
+$pastel-yellow: #fdfd96;
+$pokedex-dark-gray: #333;
+$screen-green: #98cb98;
+$screen-dark-green: #306850;
+$button-yellow: #f5d34a;
+$button-blue: #4a90e2;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $pastel-yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.calculator-container {
+  background-color: $pokedex-red;
+  border: 5px solid $pokedex-dark-gray;
+  border-radius: 20px 20px 20px 80px;
+  padding: 2rem;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #3e9fbf;
+    border: 4px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #3e9fbf;
+  }
+}
+
+.title {
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px $pokedex-dark-gray;
+  margin-top: 50px;
+  margin-bottom: 0;
+  font-size: 2rem;
+}
+
+.display-container {
+  padding: 0.5rem;
+  background-color: $pokedex-dark-gray;
+  border-radius: 10px;
+  border: 3px inset #222;
+}
+
+.display {
+  background-color: $screen-green;
+  color: $screen-dark-green;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  text-align: right;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 2.2rem;
+  min-height: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  word-break: break-all;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.button {
+  padding: 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border: 3px solid $pokedex-dark-gray;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: $pokedex-dark-gray;
+  color: white;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  &.operator {
+    background-color: $button-yellow;
+    color: $pokedex-dark-gray;
+  }
+
+  &.function {
+    background-color: $button-blue;
+    color: white;
+  }
+}
+
+@media (max-width: 480px) {
+  .calculator-container {
+    padding: 1.5rem;
+    gap: 1rem;
+    border-radius: 15px 15px 15px 60px;
+  }
+
+  .calculator-container::before {
+    width: 40px;
+    height: 40px;
+    top: 15px;
+    left: 15px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-top: 40px;
+  }
+
+  .display {
+    font-size: 1.8rem;
+    padding: 0.8rem;
+  }
+
+  .keypad {
+    gap: 0.5rem;
+  }
+
+  .button {
+    font-size: 1.5rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .calculator-container {
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+
+  .calculator-container::before {
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+    margin-top: 35px;
+  }
+
+  .display {
+    font-size: 1.6rem;
+    padding: 0.6rem;
+  }
+  
+  .keypad {
+    gap: 0.4rem;
+  }
+
+  .button {
+    font-size: 1.3rem;
+    padding: 0.7rem;
+  }
+}
