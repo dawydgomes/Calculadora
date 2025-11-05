@@ -23,6 +23,15 @@ body {
   box-sizing: border-box;
 }
 
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
 .calculator-container {
   background-color: $pokedex-red;
   border: 5px solid $pokedex-dark-gray;
@@ -125,6 +134,56 @@ body {
   }
 }
 
+.pokemon-display-container {
+  text-align: center;
+  width: 100%;
+  max-width: 420px;
+}
+
+.pokemon-question {
+  color: $pokedex-dark-red;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.pokemon-info {
+  background-color: #fff;
+  border: 4px solid $pokedex-dark-gray;
+  border-radius: 10px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  
+  .loading, .error {
+    font-size: 1.2rem;
+    color: $pokedex-dark-gray;
+    font-weight: bold;
+  }
+}
+
+.pokemon-sprite {
+  width: 150px;
+  height: 150px;
+  image-rendering: pixelated;
+}
+
+.pokemon-name {
+  font-size: 1.5rem;
+  color: $pokedex-dark-gray;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 901px) {
+  .app-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
 @media (max-width: 480px) {
   .calculator-container {
     padding: 1.5rem;
@@ -156,6 +215,19 @@ body {
   .button {
     font-size: 1.5rem;
     padding: 0.8rem;
+  }
+
+  .pokemon-question {
+    font-size: 1.5rem;
+  }
+
+  .pokemon-sprite {
+    width: 120px;
+    height: 120px;
+  }
+
+  .pokemon-name {
+    font-size: 1.3rem;
   }
 }
 
@@ -189,5 +261,18 @@ body {
   .button {
     font-size: 1.3rem;
     padding: 0.7rem;
+  }
+
+  .pokemon-question {
+    font-size: 1.3rem;
+  }
+
+  .pokemon-sprite {
+    width: 100px;
+    height: 100px;
+  }
+
+  .pokemon-name {
+    font-size: 1.2rem;
   }
 }
